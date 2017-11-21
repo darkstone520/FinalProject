@@ -4,27 +4,28 @@ block content
     .card-block
       p.card-text
         .container
-          .content=question.content
+          .card_content=question.content
+
       p.card-footer
         .container
           .row 
             .col 
-             .content Start Date
+             .footer_content Start Date
             .col 
-             .content Finish Date
+             .footer_content Finish Date
             .col 
-             .content Organization
+             .footer_content Organization
             .col 
-             .content Ticket Price
+             .footer_content Ticket Fee
           .row
             .col
-              .content=question.start_date
+              .footer_content=question.start_date
             .col
-              .content=question.finish_date
+              .footer_content=question.finish_date
             .col
-              .content=question.organization
+              .footer_content=question.organization
             .col
-              .content=question.price
+              .footer_content=question.fee
 
 
 

@@ -8,19 +8,19 @@ block hero-unit
 
 
 block content
-    h1.main-title 
-      | Events
+  .container
+    h1.home-main-title 
+      | Events for you in Seoul, Republic of Korea. 
       if questions.total > 0
         .small Total #{questions.total} Event(s)
 
     if questions.total <= 0 
       .alert.alert-info No questions available yet
     else
-    .container
-      .questions
-        each question in questions.docs
-          .question
-            a.title(href=`/questions/${question.id}`)= question.title
-            include ./questions/_card
+    .questions
+      each question in questions.docs
+        .question
+          a.title(href=`/questions/${question.id}`)= question.title
+          include ./questions/_card
 
-      +paginate(questions, '/questions', {query: "???XXX&&"})
+    +paginate(questions, '/questions', {query: "???XXX&&"})

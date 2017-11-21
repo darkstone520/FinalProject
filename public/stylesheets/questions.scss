@@ -5,6 +5,30 @@
     color: #bbb;
   }
 }
+
+.panel_body{
+  background-color: #f66830;
+  opacity: 0.6;
+
+
+}
+
+.home-main-title{
+  font-size: 2em;
+  text-align: center;
+  color: #f66830;
+  margin-bottom: 2em;
+  .small {
+  float: right;
+  font-size: 1rem;
+  color: #bbb;
+  }
+
+}
+.ticket_content{
+  color: white;
+}
+
 .question {
   line-height: 160%;
   margin-bottom: 1em;
@@ -67,5 +91,16 @@
       margin-bottom: 0.5em;
       color: #bbb;
     }
+  }
+}
+
+.card-block{
+  .card_content{
+    color: black;
+  }
+  .footer_content{
+    color: gray;
+    font-size: 0.5em;
+    text-align: center;
   }
 }

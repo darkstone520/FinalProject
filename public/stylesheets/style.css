@@ -37,7 +37,7 @@ a:hover {
   color: #011a72; }
 
 .header > .navbar {
-  background-color: #011a72 !important; }
+  background-color: #f66830 !important; }
 
 .search-input-group {
   margin: 1em 0;
@@ -82,6 +82,23 @@ a:hover {
   float: right;
   font-size: 1rem;
   color: #bbb; }
+
+.panel_body {
+  background-color: #f66830;
+  opacity: 0.6; }
+
+.home-main-title {
+  font-size: 2em;
+  text-align: center;
+  color: #f66830;
+  margin-bottom: 2em; }
+  .home-main-title .small {
+    float: right;
+    font-size: 1rem;
+    color: #bbb; }
+
+.ticket_content {
+  color: white; }
 
 .question {
   line-height: 160%;
@@ -132,5 +149,13 @@ a:hover {
   .show .answer .content {
     margin-bottom: 0.5em;
     color: #bbb; }
+
+.card-block .card_content {
+  color: black; }
+
+.card-block .footer_content {
+  color: gray;
+  font-size: 0.5em;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

@@ -88,6 +88,8 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     start_date: req.body.startDate,
     finish_date: req.body.finishDate,
     event_area: req.body.eventArea,
+    event_categories: req.body.categories,
+    event_area: req.body.eventArea,
     fee: req.body.eventFee,
     price: req.body.price,
     tags: req.body.tags.split(" ").map(e => e.trim()),

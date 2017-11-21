@@ -17,14 +17,14 @@
         td(width="70", align="right") Quantity
       tr.ticket_row
         td.ticket_type_name
-          .content= question.location
+          .ticket_content= question.location
         td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-          .content= question.start_date
+          .ticket_content= question.start_date
         td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-          .content= question.finish_date
+          .ticket_content= question.finish_date
         td.price_td(nowrap="nowrap")
           input(type="hidden", name="cost_37817157_None", value="0.00")
-          .content= question.price
+          .ticket_content= question.price
         td.fee_td(nowrap="nowrap")
         td(align="right", nowrap="nowrap")
           label.is-hidden-accessible(for="quant_37817157_None") Ticket Quantity Select
@@ -47,11 +47,11 @@
         td Event Area
       tr.ticket_row
               td.ticket_type_name
-                .content= question.organization
+                .ticket_content= question.organization
               td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-                .content= question.event_categories
+                .ticket_content= question.event_categories
               td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-                .content= question.event_area
+                .ticket_content= question.event_area
 
 .row
   .col-sm
