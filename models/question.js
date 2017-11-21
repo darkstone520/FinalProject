@@ -12,6 +12,7 @@ var schema = new Schema({
   start_date : {type: String, trim: true},
   finish_date : {type: String, trim: true},
   tags: [String],
+  event_categories : {type: String, trim: true},
   event_area : {type: String, trim: true},
   fee : {type: String, trim: true},
   price : {type: String, trim: true},

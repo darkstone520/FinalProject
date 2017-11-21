@@ -1,11 +1,36 @@
 var express = require('express'),
   User = require('../models/user');
+const Question = require('../models/question');
+const catchErrors = require('../lib/async-error');
+
 var router = express.Router();
 
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index');
+// });
+
+router.get('/', catchErrors(async (req, res, next) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+  var query = {};
+  const term = req.query.term;
+  if (term) {
+    query = {$or: [
+      {title: {'$regex': term, '$options': 'i'}},
+      {content: {'$regex': term, '$options': 'i'}}
+    ]};
+  }
+  const questions = await Question.paginate(query, {
+    sort: {createdAt: -1}, 
+    populate: 'author', 
+    page: page, limit: limit
+  });
+
+  res.render('./index', {questions: questions, term: term});
+}));
+
 
 router.get('/signin', function(req, res, next) {
   res.render('signin');
@@ -32,5 +57,6 @@ router.get('/signout', function(req, res, next) {
   req.flash('success', 'Successfully signed out.');
   res.redirect('/');
 });
+
 
 module.exports = router;

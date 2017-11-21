@@ -1,0 +1,30 @@
+
+block content
+  .card
+    .card-block
+      p.card-text
+        .container
+          .content=question.content
+      p.card-footer
+        .container
+          .row 
+            .col 
+             .content Start Date
+            .col 
+             .content Finish Date
+            .col 
+             .content Organization
+            .col 
+             .content Ticket Price
+          .row
+            .col
+              .content=question.start_date
+            .col
+              .content=question.finish_date
+            .col
+              .content=question.organization
+            .col
+              .content=question.price
+
+
+

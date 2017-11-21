@@ -8,20 +8,23 @@
   table#ticket_table.ticket_table(width="100%", border="0", cellpadding="0", cellspacing="0", data-automation="ticket_table")
     tbody
       tr.ticket_table_head
-        td(width="40%", nowrap="nowrap")
-          | Type
-        td End
-        td
+        td(width="15%", nowrap="nowrap")
+          | Location
+        td Start Date
+        td End Date
+        td Ticket Price
         td
         td(width="70", align="right") Quantity
       tr.ticket_row
         td.ticket_type_name
           .content= question.location
         td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
+          .content= question.start_date
+        td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
           .content= question.finish_date
         td.price_td(nowrap="nowrap")
           input(type="hidden", name="cost_37817157_None", value="0.00")
-          |         Free
+          .content= question.price
         td.fee_td(nowrap="nowrap")
         td(align="right", nowrap="nowrap")
           label.is-hidden-accessible(for="quant_37817157_None") Ticket Quantity Select
@@ -37,6 +40,18 @@
             option(value="9") 9
             option(value="10") 10
 
+    tbody
+      tr.ticket_table_head
+        td Organization
+        td Event Categories
+        td Event Area
+      tr.ticket_row
+              td.ticket_type_name
+                .content= question.organization
+              td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
+                .content= question.event_categories
+              td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
+                .content= question.event_area
 
 .row
   .col-sm
@@ -46,7 +61,7 @@
       #[span.number.num-views= question.numReads] reads
   .col-sm
     .author
-      | asked on #{moment(question.createdAt).format('YYYY-MM-DD')}
+      | Created by #{moment(question.createdAt).format('YYYY-MM-DD')}
       if question.author
         | 
         | by #[a(href=`/users/${question.author.id}`)= question.author.name] 

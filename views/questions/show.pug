@@ -14,6 +14,8 @@ block content
         a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
         | 
         a.btn.btn-outline-danger.delete-btn(href="#", data-url=`/questions/${question.id}?_method=delete`) Delete
+        |     
+        a.btn.btn-outline-primary.register-btn(href="#", data-url=`/questions/${question.id}?_method=delete`) Register
       
     if question.numAnswers > 0
       hr
@@ -24,9 +26,9 @@ block content
 
     form(action=`/questions/${question.id}/answers`, method='POST')
       .form-group
-        label(for='answer') Your Answer
+        label(for='answer') Your Comment
         textarea.form-control(name="content", rows="5")
-      button.btn.btn-primary(type="submit") Post Your Answer
+      button.btn.btn-primary(type="submit") Post Your Comment
 
   script.
     $(function() {
