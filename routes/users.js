@@ -1,6 +1,7 @@
 var express = require('express'),
     User = require('../models/user');
 var router = express.Router();
+const Question = require('../models/question');
 
 function needAuth(req, res, next) {
     if (req.session.user) {
@@ -40,12 +41,16 @@ function validateForm(form, options) {
   return null;
 }
 
+
+
+
 /* GET users listing. */
 router.get('/', needAuth, (req, res, next) => {
   User.find({}, function(err, users) {
     if (err) {
       return next(err);
     }
+
     res.render('users/index', {users: users});
   }); // TODO: pagination?
 });
