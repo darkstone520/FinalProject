@@ -9,11 +9,6 @@ body {
 a:hover {
   text-decoration: none; }
 
-
-.col.register_btn{
-  margin-top: 1.5em;
-}
-
 .jumbotron {
   margin-top: -1em;
   background: url("/images/bg.jpg") no-repeat left center;
@@ -58,6 +53,51 @@ a:hover {
     left: 0.5em;
     color: #bababa;
     position: absolute; }
+
+.card-block .footer_content {
+  color: gray;
+  font-size: 0.5em;
+  text-align: center; }
+
+.home-main-title {
+  font-size: 2em;
+  text-align: center;
+  color: #f66830;
+  margin-bottom: 2em; }
+
+.home-main-title .small {
+  float: right;
+  font-size: 1rem;
+  color: #bbb; }
+
+.ticket_content {
+  color: white; }
+
+.panel_body {
+  background-color: #f66830;
+  opacity: 0.6; }
+
+.home-main-title {
+  font-size: 2em;
+  text-align: center;
+  color: #f66830;
+  margin-bottom: 2em; }
+
+.home-main-title .small {
+  float: right;
+  font-size: 1rem;
+  color: #bbb; }
+
+.ticket_content {
+  color: white; }
+
+.card-block .card_content {
+  color: black; }
+
+.card-block .footer_content {
+  color: gray;
+  font-size: 0.5em;
+  text-align: center; }
 
 .form-signin {
   width: 300px;
@@ -153,7 +193,7 @@ a:hover {
     padding-left: 4em; }
   .show .answer .content {
     margin-bottom: 0.5em;
-    color: navy; }
+    color: #bbb; }
 
 .card-block .card_content {
   color: black; }

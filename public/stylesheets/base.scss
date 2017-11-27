@@ -42,8 +42,7 @@ a:hover {
   font-size: 2.5rem;
   margin: 1em 0 0.5em 0;
   border-bottom: 1px solid #eee;
-  color: #011a72;
-}
+  color: orange; }
 
 .header > .navbar {
   background-color: #f66830!important;
@@ -67,3 +66,56 @@ a:hover {
   }
 
 } 
+
+.card-block .footer_content {
+  color: gray;
+  font-size: 0.5em;
+  text-align: center; }
+
+
+.home-main-title {
+  font-size: 2em;
+  text-align: center;
+  color: #f66830;
+  margin-bottom: 2em; }
+
+.home-main-title .small {
+  float: right;
+  font-size: 1rem;
+  color: #bbb; }
+
+.ticket_content {
+  color: white; }
+
+
+.panel_body {
+  background-color: #f66830;
+  opacity: 0.6; }
+
+.home-main-title {
+  font-size: 2em;
+  text-align: center;
+  color: #f66830;
+  margin-bottom: 2em; }
+  .home-main-title .small {
+    float: right;
+    font-size: 1rem;
+    color: #bbb; }
+
+.ticket_content {
+  color: white; }
+
+.card-block .card_content {
+  color: black; }
+
+.card-block .footer_content {
+  color: gray;
+  font-size: 0.5em;
+  text-align: center; }
+
+
+
+
+
+
+
