@@ -8,10 +8,9 @@ block hero-unit
 
 
 block content
-  .container
-    h1.home-main-title 
-      | Events for you in Seoul, Republic of Korea. 
-      if questions.total > 0
+  .container.main-card
+    h1.home-main-title Events for you in Seoul, Republic of Korea.
+    if questions.total > 0
         .small Total #{questions.total} Event(s)
 
     if questions.total <= 0 

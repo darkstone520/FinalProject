@@ -9,6 +9,14 @@ body {
 a:hover {
   text-decoration: none; }
 
+.card-footer{
+  margin-top: -0.1em;
+}
+
+.container.main-card{
+  
+}
+
 .jumbotron {
   margin-top: -1em;
   background: url("/images/bg.jpg") no-repeat left center;
