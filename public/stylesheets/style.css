@@ -35,7 +35,7 @@ a:hover {
   font-size: 2.5rem;
   margin: 1em 0 0.5em 0;
   border-bottom: 1px solid #eee;
-  color: #011a72; }
+  color: orange; }
 
 .header > .navbar {
   background-color: #f66830 !important; }
