@@ -1,56 +1,62 @@
-.form-group
-  label(for="title") Event Title
-  input.form-control(type="text", name="title", placeholder="What's your Event Title?", value=question.title)
-.form-group
-  label(for="question") Description
-  textarea.form-control(name="content", rows="5")
+.container.create_event
+  .form-group
+    label(for="title") Event Title
+    input.form-control(type="text", name="title", placeholder="What's your Event Title?", value=question.title)
+  .form-group
+    label(for="question") Description
+    textarea.form-control(name="content", rows="5")
 
-.form-group
-  label(for="question") Location
-  textarea.form-control(name="location", rows="1")
+  .form-group
+    label(for="question") Location
+    textarea.form-control(name="location", rows="1")
 
-.form-group
-  label(for="question") Organization
-  textarea.form-control(name="Organization", rows="1")
+  .form-group
+    label(for="question") Organization
+    textarea.form-control(name="Organization", rows="1")
 
-.form-group
-  label(for="question") Organization Description
-  textarea.form-control(name="orgDescription", rows="3")
+  .form-group
+    label(for="question") Organization Description
+    textarea.form-control(name="orgDescription", rows="3")
 
-.form-group
-  label(for="question") Start Date
-  input.form-control(name="startDate", rows="1", type="date")
+  .row
+    .col
+      .form-group
+        label(for="question") Start Date
+        input.form-control(name="startDate", rows="1", type="date")
+    .col
+      .form-group
+        label(for="question") Finish Date
+        input.form-control(name="finishDate", rows="1", type="date")
 
-.form-group
-  label(for="question") Finish Date
-  input.form-control(name="finishDate", rows="1", type="date")
 
+  .form-group
+    label(for="tags") Tags
+    input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
 
-.form-group
-  label(for="tags") Tags
-  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
+  .row
+    .col
+      .form-group
+          label(for="exampleSelect1") Event Categories
+          select.form-control(name="categories")
+            option 모임
+            option 회의
 
-.form-group
-    label(for="exampleSelect1") Event Categories
-    select.form-control(name="categories")
-      option 모임
-      option 회의
+    .col
+      .form-group
+          label(for="exampleSelect1") Event Area
+          select.form-control(name="eventArea")
+            option 여행
+            option 공부
+    .col
+      .form-group
+          label(for="exampleSelect1") Fee
+          select.form-control(name="eventFee")
+            option 무료
+            option 유료
 
-.form-group
-    label(for="exampleSelect1") Event Area
-    select.form-control(name="eventArea")
-      option 여행
-      option 공부
-
-.form-group
-    label(for="exampleSelect1") Fee
-    select.form-control(name="eventFee")
-      option 무료
-      option 유료
-
-.form-group
-  label(for="question") 가격
-  textarea.form-control(name="price", rows="1")
+  .form-group
+    label(for="question") 가격
+    textarea.form-control(name="price", rows="1")
 
 
 
