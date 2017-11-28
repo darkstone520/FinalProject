@@ -9,9 +9,10 @@
         ul.navbar-nav.ml-auto
           li.nav-item
             a.nav-link(href="/questions") Browse Event
-          li.nav-item
-            a.nav-link(href="/users") Users
-          if (!currentUser) 
+          if currentUser
+            li.nav-item
+              a.nav-link(href="/users") Admin
+          if (!currentUser)
             li.nav-item
               a.nav-link(href='/signin') Signin
             li.nav-item

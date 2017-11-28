@@ -53,10 +53,15 @@
           select.form-control(name="eventFee")
             option 무료
             option 유료
-
-  .form-group.price
-    label(for="question") 가격
-    textarea.form-control(name="price", rows="1")
+  .row
+    .col
+      .form-group.price
+        label(for="question") 가격
+        textarea.form-control(name="price", rows="1")
+    .col
+      .form-group.limitNum
+        label(for="question") 제한인원수(미입력 시: 100명)
+        textarea.form-control(name="limitNum", rows="1")
 
 
 

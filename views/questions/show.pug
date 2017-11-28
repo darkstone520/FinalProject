@@ -24,15 +24,17 @@ block content
           include _answer
     .row
       .col
-        form(action=`/questions/${question.id}/answers`, method='POST')
-        .form-group
-            label(for="exampleSelect1") Join Here
-            select.form-control(name="content")
-              option 참가합니다.
-              option 고민중입니다.
+        if question.numAnswers < question.limitNum
+          form(action=`/questions/${question.id}/answers`, method='POST')
+            .form-group
+                label(for="exampleSelect1") Join Here
+                select.form-control(name="content")
+                  option 참여합니다.
+                  option 고민중입니다.
 
-        .register_btn
-          button.btn.btn-primary(type="submit") Register
+                button.btn.btn-primary(type="submit") Register
+        else
+          h2.limit-comment 신청인원을 초과하였습니다.
 
   script.
     $(function() {

@@ -6,6 +6,12 @@ body {
   body > .main-content {
     min-height: 400px; }
 
+.limit-comment {
+  text-align: center;
+  color: #f66830;
+  font-size: 2em;
+  margin-top: 1em; }
+
 a:hover {
   text-decoration: none; }
 
@@ -77,7 +83,7 @@ a:hover {
   color: white; }
 
 .panel_body {
-  background-color: #f66830;
+  background-color: #ccc;
   opacity: 0.6; }
 
 .home-main-title {
@@ -130,10 +136,6 @@ a:hover {
   float: right;
   font-size: 1rem;
   color: #bbb; }
-
-.panel_body {
-  background-color: #f66830;
-  opacity: 0.6; }
 
 .home-main-title {
   font-size: 2em;

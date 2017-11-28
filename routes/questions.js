@@ -28,7 +28,11 @@ router.get('/', catchErrors(async (req, res, next) => {
   if (term) {
     query = {$or: [
       {title: {'$regex': term, '$options': 'i'}},
-      {content: {'$regex': term, '$options': 'i'}}
+      {content: {'$regex': term, '$options': 'i'}},
+      {location: {'$regex': term, '$options': 'i'}},
+      {start_date: {'$regex': term, '$options': 'i'}},
+      {finish_date: {'$regex': term, '$options': 'i'}},
+      {event_categories: {'$regex': term, '$options': 'i'}}
     ]};
   }
   const questions = await Question.paginate(query, {
@@ -94,6 +98,7 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     event_area: req.body.eventArea,
     fee: req.body.eventFee,
     price: req.body.price,
+    limitNum: req.body.limitNum,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();
