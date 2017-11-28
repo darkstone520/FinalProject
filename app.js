@@ -11,6 +11,24 @@ var flash = require('connect-flash');
 var mongoose   = require('mongoose');
 var passport = require('passport');
 
+// 이메일 
+// var mailgun = require("mailgun-js");
+// var api_key = 'key-aad0b35ddfc0ef03c537b28eb3e2e714';
+// var DOMAIN = 'YOUR_DOMAIN_NAME';
+// var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
+
+// var data = {
+//   from: 'Excited User <me@samples.mailgun.org>',
+//   to: 'bar@example.com, YOU@YOUR_DOMAIN_NAME',
+//   subject: 'Hello',
+//   text: 'Testing some Mailgun awesomness!'
+// };
+
+// mailgun.messages().send(data, function (error, body) {
+//   console.log(body);
+// });
+
+
 
 
 var index = require('./routes/index');

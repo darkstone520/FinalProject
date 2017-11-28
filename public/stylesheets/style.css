@@ -9,6 +9,9 @@ body {
 a:hover {
   text-decoration: none; }
 
+.col.register_btn {
+  margin-top: 1.6em; }
+
 .jumbotron {
   margin-top: -1em;
   background: url("/images/bg.jpg") no-repeat left center;

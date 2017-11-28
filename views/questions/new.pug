@@ -5,6 +5,13 @@ block content
     h1.main-title New Event
     form(action="/questions", method="POST")
       include _form
-      button.btn.btn-outline-primary(type="submit") Create Event
+      button.btn.btn-outline-primary.create-btn(type="submit") Create Event
 
-    
+
+  //- script.
+  //-   $(function() {
+  //-     $('.form-group select').click(function() {
+  //-       var selected = $('#eventFee option:selected').text()
+  //-   	console.log(selected)
+  //-     });
+  //-   });
