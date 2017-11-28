@@ -25,13 +25,14 @@ block content
     .row
       .col
         form(action=`/questions/${question.id}/answers`, method='POST')
-          .form-group
-              label(for="exampleSelect1") Join Here
-              select.form-control(name="content")
-                option 참가합니다.
-                option 고민중입니다.
-      .col.register_btn
-        button.btn.btn-primary(type="submit") Register
+        .form-group
+            label(for="exampleSelect1") Join Here
+            select.form-control(name="content")
+              option 참가합니다.
+              option 고민중입니다.
+
+        .register_btn
+          button.btn.btn-primary(type="submit") Register
 
   script.
     $(function() {
