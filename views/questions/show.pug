@@ -18,7 +18,7 @@ block content
       
     if question.numAnswers > 0
       hr
-      h3 #{question.numAnswers}/#{question.limitNum} Participant(s)
+      h3.answer-comment #{question.numAnswers}명 참여(최대 #{question.limitNum}명 가능)
       .answers.show
         each answer in answers
           include _answer
@@ -30,10 +30,9 @@ block content
                 label(for="exampleSelect1") Join Here
                 select.form-control(name="content")
                   option 참여합니다.
-
-                button.btn.btn-primary(type="submit") Register
+                button.btn.btn-primary.register-btn(type="submit") Register
         else
-          h2.limit-comment 신청인원을 초과하였습니다.
+          h2.limit-comment 참여 가능인원을 초과하였습니다.
 
   script.
     $(function() {
