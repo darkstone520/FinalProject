@@ -60,6 +60,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
   res.render('questions/show', {question: question, answers: answers});
 }));
 
+
 router.put('/:id', catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id);
 
