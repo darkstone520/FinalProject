@@ -1,6 +1,6 @@
-.content= event.content
+.content= question.content
 .tags.badges
-  each tag in event.tags
+  each tag in question.tags
     span.badge.badge-phill.badge-secondary= tag
     | 
 
@@ -17,14 +17,14 @@
         td(width="70", align="right") Quantity
       tr.ticket_row
         td.ticket_type_name
-          .ticket_content= event.location
+          .ticket_content= question.location
         td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-          .ticket_content= event.start_date
+          .ticket_content= question.start_date
         td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-          .ticket_content= event.finish_date
+          .ticket_content= question.finish_date
         td.price_td(nowrap="nowrap")
           input(type="hidden", name="cost_37817157_None", value="0.00")
-          .ticket_content= event.price
+          .ticket_content= question.price
         td.fee_td(nowrap="nowrap")
         td(align="right", nowrap="nowrap")
           label.is-hidden-accessible(for="quant_37817157_None") Ticket Quantity Select
@@ -47,21 +47,21 @@
         td Event Area
       tr.ticket_row
               td.ticket_type_name
-                .ticket_content= event.organization
+                .ticket_content= question.organization
               td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-                .ticket_content= event.event_categories
+                .ticket_content= question.event_categories
               td(nowrap="nowrap", content="2017-12-31 09:30:00-08:00")
-                .ticket_content= event.event_area
+                .ticket_content= question.event_area
 
 .row
   .col-sm
     .numbers.
-      #[span.number.num-votes= event.numLikes] likes,
-      #[span.number.num-answers= event.numAnswers] participants,
-      #[span.number.num-views= event.numReads] reads
+      #[span.number.num-votes= question.numLikes] likes,
+      #[span.number.num-answers= question.numAnswers] participants,
+      #[span.number.num-views= question.numReads] reads
   .col-sm
     .author
-      | Created by #{moment(event.createdAt).format('YYYY-MM-DD')}
-      if event.author
+      | Created by #{moment(question.createdAt).format('YYYY-MM-DD')}
+      if question.author
         | 
-        | by #[a(href=`/users/${event.author.id}`)= event.author.name] 
+        | by #[a(href=`/users/${question.author.id}`)= question.author.name] 

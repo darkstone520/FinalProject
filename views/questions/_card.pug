@@ -4,7 +4,7 @@ block content
     .card-block
       p.card-text
         .container
-          .card_content=event.content
+          .card_content=question.content
 
       p.card-footer
         .container
@@ -19,13 +19,13 @@ block content
              .footer_content Ticket
           .row
             .col
-              .footer_content=event.start_date
+              .footer_content=question.start_date
             .col
-              .footer_content=event.finish_date
+              .footer_content=question.finish_date
             .col
-              .footer_content=event.organization
+              .footer_content=question.organization
             .col
-              .footer_content=event.fee
+              .footer_content=question.fee
 
 
 

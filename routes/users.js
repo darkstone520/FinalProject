@@ -1,7 +1,7 @@
 var express = require('express'),
     User = require('../models/user');
 var router = express.Router();
-const Event = require('../models/event');
+const Question = require('../models/question');
 
 function needAuth(req, res, next) {
     if (req.session.user) {

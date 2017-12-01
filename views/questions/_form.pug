@@ -1,37 +1,37 @@
 .container.create_event
   .form-group
     label(for="title") Event Title
-    input.form-control(type="text", name="title", placeholder="What's your Event Title?", value=event.title)
+    input.form-control(type="text", name="title", placeholder="What's your Event Title?", value=question.title)
   .form-group
-    label(for="event") Description
+    label(for="question") Description
     textarea.form-control(name="content", rows="5")
 
   .form-group
-    label(for="event") Location
+    label(for="question") Location
     textarea.form-control(name="location", rows="1")
 
   .form-group
-    label(for="event") Organization
+    label(for="question") Organization
     textarea.form-control(name="Organization", rows="1")
 
   .form-group
-    label(for="event") Organization Description
+    label(for="question") Organization Description
     textarea.form-control(name="orgDescription", rows="3")
 
   .row
     .col
       .form-group
-        label(for="event") Start Date
+        label(for="question") Start Date
         input.form-control(name="startDate", rows="1", type="date")
     .col
       .form-group
-        label(for="event") Finish Date
+        label(for="question") Finish Date
         input.form-control(name="finishDate", rows="1", type="date")
 
 
   .form-group
     label(for="tags") Tags
-    input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=event.tags ? event.tags.join(" ") : "")
+    input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
 
   .row
     .col
@@ -56,11 +56,11 @@
   .row
     .col
       .form-group.price
-        label(for="event") 가격
+        label(for="question") 가격
         textarea.form-control(name="price", rows="1")
     .col
       .form-group.limitNum
-        label(for="event") 제한인원수(미입력 시: 100)
+        label(for="question") 제한인원수(미입력 시: 100)
         textarea.form-control(name="limitNum", rows="1")
 
 

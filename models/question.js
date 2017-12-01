@@ -26,6 +26,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 schema.plugin(mongoosePaginate);
-var Event = mongoose.model('Event', schema);
+var Question = mongoose.model('Question', schema);
 
-module.exports = Event;
+module.exports = Question;

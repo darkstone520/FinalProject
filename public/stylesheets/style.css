@@ -167,14 +167,14 @@ a:hover {
 .ticket_content {
   color: white; }
 
-.event {
+.question {
   line-height: 160%;
   margin-bottom: 1em; }
-  .event .title {
+  .question .title {
     font-size: 1.3rem; }
-  .event .content {
+  .question .content {
     color: #aaa; }
-  .event .tags {
+  .question .tags {
     margin: 0.5em 0; }
 
 .author {
@@ -191,7 +191,7 @@ a:hover {
   font-weight: bold;
   color: #0f5ca6; }
 
-.events .content {
+.questions .content {
   max-height: 5em;
   overflow: hidden;
   text-overflow: ellipsis; }

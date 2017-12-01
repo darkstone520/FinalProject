@@ -1,5 +1,5 @@
 const express = require('express');
-const Event = require('../models/event');
+const Question = require('../models/question');
 const User = require('../models/user'); 
 const Answer = require('../models/answer'); 
 const catchErrors = require('../lib/async-error');
@@ -18,7 +18,7 @@ function needAuth(req, res, next) {
 }
 
 
-/* GET events listing. */
+/* GET questions listing. */
 router.get('/', catchErrors(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
@@ -35,57 +35,57 @@ router.get('/', catchErrors(async (req, res, next) => {
       {event_categories: {'$regex': term, '$options': 'i'}}
     ]};
   }
-  const events = await Event.paginate(query, {
+  const questions = await Question.paginate(query, {
     sort: {createdAt: -1}, 
     populate: 'author', 
     page: page, limit: limit
   });
-  res.render('events/index', {events: events, term: term});
+  res.render('questions/index', {questions: questions, term: term});
 }));
 
 router.get('/new', needAuth, (req, res, next) => {
-  res.render('events/new', {event: {}});
+  res.render('questions/new', {question: {}});
 });
 
 router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
-  const event = await event.findById(req.params.id);
-  res.render('events/edit', {event: event});
+  const question = await Question.findById(req.params.id);
+  res.render('questions/edit', {question: question});
 }));
 
 router.get('/:id', catchErrors(async (req, res, next) => {
-  const event = await event.findById(req.params.id).populate('author');
-  const answers = await Answer.find({event: event.id}).populate('author');
-  event.numReads++;    // TODO: 동일한 사람이 본 경우에 Read가 증가하지 않도록???
-  await event.save();
-  res.render('events/show', {event: event, answers: answers});
+  const question = await Question.findById(req.params.id).populate('author');
+  const answers = await Answer.find({question: question.id}).populate('author');
+  question.numReads++;    // TODO: 동일한 사람이 본 경우에 Read가 증가하지 않도록???
+  await question.save();
+  res.render('questions/show', {question: question, answers: answers});
 }));
 
 
 router.put('/:id', catchErrors(async (req, res, next) => {
-  const event = await event.findById(req.params.id);
+  const question = await Question.findById(req.params.id);
 
-  if (!event) {
-    req.flash('danger', 'Not exist event');
+  if (!question) {
+    req.flash('danger', 'Not exist question');
     return res.redirect('back');
   }
-  event.title = req.body.title;
-  event.content = req.body.content;
-  event.tags = req.body.tags.split(" ").map(e => e.trim());
+  question.title = req.body.title;
+  question.content = req.body.content;
+  question.tags = req.body.tags.split(" ").map(e => e.trim());
 
-  await event.save();
+  await question.save();
   req.flash('success', 'Successfully updated');
-  res.redirect('/events');
+  res.redirect('/questions');
 }));
 
 router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
-  await event.findOneAndRemove({_id: req.params.id});
+  await Question.findOneAndRemove({_id: req.params.id});
   req.flash('success', 'Successfully deleted');
-  res.redirect('/events');
+  res.redirect('/questions');
 }));
 
 router.post('/', needAuth, catchErrors(async (req, res, next) => {
   const user = req.session.user;
-  var event = new event({
+  var question = new Question({
     title: req.body.title,
     author: user._id,
     content: req.body.content,
@@ -102,31 +102,31 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     limitNum: req.body.limitNum,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
-  await event.save();
+  await question.save();
   req.flash('success', 'Successfully posted');
-  res.redirect('/events');
+  res.redirect('/questions');
 }));
 
 router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   const user = req.session.user;
-  const event = await event.findById(req.params.id);
+  const question = await Question.findById(req.params.id);
 
-  if (!event) {
-    req.flash('danger', 'Not exist event');
+  if (!question) {
+    req.flash('danger', 'Not exist question');
     return res.redirect('back');
   }
 
   var answer = new Answer({
     author: user._id,
-    event: event._id,
+    question: question._id,
     content: req.body.content
   });
   await answer.save();
-  event.numAnswers++;
-  await event.save();
+  question.numAnswers++;
+  await question.save();
 
   req.flash('success', 'Successfully answered');
-  res.redirect(`/events/${req.params.id}`);
+  res.redirect(`/questions/${req.params.id}`);
 }));
 
 
