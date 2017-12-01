@@ -2,29 +2,29 @@ extends ../layout
 
 block content
   .container
-    h1.main-title= question.title
+    h1.main-title= event.title
 
-    .question.show
-      //- .content= question.content
-      include _questionDetail
+    .event.show
+      //- .content= event.content
+      include _eventDetail
       .buttons
         button.btn.btn-primary.like-btn(type="submit") #[i.fa.fa-thumbs-up] Like
         | 
-        a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
+        a.btn.btn-outline-secondary(href=`/events/${event.id}/edit`) Edit
         | 
-        a.btn.btn-outline-danger.delete-btn(href="#", data-url=`/questions/${question.id}?_method=delete`) Delete
+        a.btn.btn-outline-danger.delete-btn(href="#", data-url=`/events/${event.id}?_method=delete`) Delete
    
       
-    if question.numAnswers > 0
+    if event.numAnswers > 0
       hr
-      h3.answer-comment #{question.numAnswers}명 참여(최대 #{question.limitNum}명 가능)
+      h3.answer-comment #{event.numAnswers}명 참여(최대 #{event.limitNum}명 가능)
       .answers.show
         each answer in answers
           include _answer
     .row
       .col
-        if question.numAnswers < question.limitNum
-          form(action=`/questions/${question.id}/answers`, method='POST')
+        if event.numAnswers < event.limitNum
+          form(action=`/events/${event.id}/answers`, method='POST')
             .form-group
                 label(for="exampleSelect1") Join Here
                 select.form-control(name="content")

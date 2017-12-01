@@ -19,6 +19,11 @@ body {
   font-size: 1em;
   text-align: center; }
 
+.card_content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 5em; }
+
 a:hover {
   text-decoration: none; }
 
@@ -115,6 +120,11 @@ a:hover {
   font-size: 0.5em;
   text-align: center; }
 
+@media (max-width: 575px) {
+  .container.main-card {
+    font-size: 0.5em;
+    height: 10em; } }
+
 .form-signin {
   width: 300px;
   margin: 0 auto;
@@ -157,14 +167,14 @@ a:hover {
 .ticket_content {
   color: white; }
 
-.question {
+.event {
   line-height: 160%;
   margin-bottom: 1em; }
-  .question .title {
+  .event .title {
     font-size: 1.3rem; }
-  .question .content {
+  .event .content {
     color: #aaa; }
-  .question .tags {
+  .event .tags {
     margin: 0.5em 0; }
 
 .author {
@@ -181,7 +191,7 @@ a:hover {
   font-weight: bold;
   color: #0f5ca6; }
 
-.questions .content {
+.events .content {
   max-height: 5em;
   overflow: hidden;
   text-overflow: ellipsis; }

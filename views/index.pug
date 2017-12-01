@@ -10,16 +10,16 @@ block hero-unit
 block content
   .container.main-card
     h1.home-main-title Events for you in Seoul, Republic of Korea.
-    if questions.total > 0
-        .small Total #{questions.total} Event(s)
+    if events.total > 0
+        .small Total #{events.total} Event(s)
 
-    if questions.total <= 0 
-      .alert.alert-info No questions available yet
+    if events.total <= 0 
+      .alert.alert-info No events available yet
     else
-    .questions
-      each question in questions.docs
-        .question
-          a.title(href=`/questions/${question.id}`)= question.title
-          include ./questions/_card
+    .events
+      each event in events.docs
+        .event
+          a.title(href=`/events/${event.id}`)= event.title
+          include ./events/_card
 
-    +paginate(questions, '/questions', {query: "???XXX&&"})
+    +paginate(events, '/events', {query: "???XXX&&"})

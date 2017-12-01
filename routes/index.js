@@ -1,6 +1,6 @@
 var express = require('express'),
   User = require('../models/user');
-const Question = require('../models/question');
+const Event = require('../models/event');
 const catchErrors = require('../lib/async-error');
 
 var router = express.Router();
@@ -22,13 +22,13 @@ router.get('/', catchErrors(async (req, res, next) => {
       {content: {'$regex': term, '$options': 'i'}}
     ]};
   }
-  const questions = await Question.paginate(query, {
+  const events = await Event.paginate(query, {
     sort: {createdAt: -1}, 
     populate: 'author', 
     page: page, limit: limit
   });
 
-  res.render('./index', {questions: questions, term: term});
+  res.render('./index', {events: events, term: term});
 }));
 
 
