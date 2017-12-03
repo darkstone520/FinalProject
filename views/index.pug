@@ -21,7 +21,7 @@ block content
         .question
           a.title(href=`/questions/${question.id}`)= question.title
           include ./questions/_card
-
+    if question.total > 10
       a.btn.btn.more-btn(href='/questions') 이벤트 더보기
 
     //- +paginate(questions, '/questions', {query: "???XXX&&"})
