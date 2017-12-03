@@ -16,7 +16,7 @@ block content
     if questions.total <= 0 
       .alert.alert-info No event available yet
     else
-    .questions
+    .questions#main-card-body
       each question in questions.docs
         .question
           a.title#main-card-title(href=`/questions/${question.id}`)= question.title
