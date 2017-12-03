@@ -20,9 +20,13 @@ block content
       | 
       a.btn.btn-outline-danger(href=`/users/${user._id}?_method=DELETE`) Delete
 
-  //- .container
-  //-     h1.main-title= question.title
 
-  //-     .question.show
-  //-       //- .content= question.content
-  //-       include ../questions/_questionDetail
+
+//- .questions
+//-         each question in questions.docs
+//-           .question
+//-             a.title(href=`/questions/${question.id}`)= question.title
+//-             include _question
+
+//-       +paginate(questions, '/questions', {query: "???XXX&&"})
+

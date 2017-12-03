@@ -1,0 +1,22 @@
+extends ../layout
+
+include ../includes/_paginate
+
+block content
+  .container
+
+    h1.main-title 
+      | 내가 만든 이벤트
+      if questions.total > 0
+        .small Total #{questions.total} Event(s)
+
+    if questions.total <= 0 
+      .alert.alert-info No questions available yet
+    else
+      .questions
+        each question in questions.docs
+          .question
+            a.title(href=`/questions/${question.id}`)= question.title
+            include _myquestion
+
+      +paginate(questions, '/questions', {query: "???XXX&&"})

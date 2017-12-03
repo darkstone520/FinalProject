@@ -15,6 +15,9 @@ body {
 .register-btn {
   margin-top: 1em; }
 
+.more-btn {
+  width: 100%; }
+
 .answer-comment {
   font-size: 1em;
   text-align: center; }
@@ -35,7 +38,8 @@ a:hover {
   background: url("/images/bg.jpg") no-repeat left center;
   min-height: 20em;
   color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  background-size: 100%; }
 
 .form-actions {
   padding: 19px 20px 20px;
@@ -123,7 +127,13 @@ a:hover {
 @media (max-width: 575px) {
   .container.main-card {
     font-size: 0.5em;
-    height: 10em; } }
+    height: 10em; }
+  .jumbotron {
+    margin-top: -6em; }
+  .question {
+    font-size: 0.5em; }
+  .main-title {
+    font-size: 1.5em; } }
 
 .form-signin {
   width: 300px;

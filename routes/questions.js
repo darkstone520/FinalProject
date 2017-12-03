@@ -17,6 +17,20 @@ function needAuth(req, res, next) {
     }
 }
 
+router.get('/myWrite/:id', needAuth, catchErrors(async (req, res, next) => {
+  console.log('Hello')
+  const page = parseInt(req.query.page) || 1;
+  const limit = 8; 
+  var query = {author: req.params.id}; // 원하는 쿼리를 여기다 주면 그 쿼리에 해당된 데이터만 넘어감.
+  var questions = await Question.paginate(query, {
+    sort: {createdAt: -1}, // 이걸로 정렬하겠다.
+    page: page, 
+    limit: limit 
+  });
+
+  res.render('questions/myWrite', {questions: questions, query: req.query, user:req.user}); // 현 사용자의 이벤트 다 넘김
+}));
+
 
 /* GET questions listing. */
 router.get('/', catchErrors(async (req, res, next) => {

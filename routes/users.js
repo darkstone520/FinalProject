@@ -43,7 +43,6 @@ function validateForm(form, options) {
 
 
 
-
 /* GET users listing. */
 router.get('/', needAuth, (req, res, next) => {
   User.find({}, function(err, users) {
@@ -106,6 +105,7 @@ router.put('/:id', needAuth, (req, res, next) => {
   });
 });
 
+
 router.delete('/:id', needAuth, (req, res, next) => {
   User.findOneAndRemove({_id: req.params.id}, function(err) {
     if (err) {
@@ -116,11 +116,14 @@ router.delete('/:id', needAuth, (req, res, next) => {
   });
 });
 
+
+
 router.get('/:id', (req, res, next) => {
   User.findById(req.params.id, function(err, user) {
     if (err) {
       return next(err);
     }
+    
     res.render('users/show', {user: user});
   });
 });

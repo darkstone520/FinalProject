@@ -1,5 +1,5 @@
 extends layout
-include ./includes/_paginate
+//- include ./includes/_mainPaginate
 
 
 block hero-unit
@@ -22,4 +22,6 @@ block content
           a.title(href=`/questions/${question.id}`)= question.title
           include ./questions/_card
 
-    +paginate(questions, '/questions', {query: "???XXX&&"})
+    a.btn.btn.more-btn(href='/questions') 이벤트 더보기
+
+    //- +paginate(questions, '/questions', {query: "???XXX&&"})
