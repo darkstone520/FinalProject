@@ -11,7 +11,7 @@ block content
         .small Total #{questions.total} Event(s)
 
     if questions.total <= 0 
-      .alert.alert-info No questions available yet
+      .alert.alert-info 만든 이벤트가 없습니다.
     else
       .questions
         each question in questions.docs

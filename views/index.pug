@@ -14,7 +14,7 @@ block content
         .small Total #{questions.total} Event(s)
 
     if questions.total <= 0 
-      .alert.alert-info No questions available yet
+      .alert.alert-info No event available yet
     else
     .questions
       each question in questions.docs
@@ -22,6 +22,6 @@ block content
           a.title(href=`/questions/${question.id}`)= question.title
           include ./questions/_card
     if questions.total > 10
-      a.btn.btn.more-btn(href='/questions') 이벤트 더보기
+      a.btn.more-btn(href='/questions') 이벤트 더보기
 
     //- +paginate(questions, '/questions', {query: "???XXX&&"})
