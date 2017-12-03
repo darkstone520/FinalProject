@@ -51,4 +51,4 @@
       | Created by #{moment(question.createdAt).format('YYYY-MM-DD')}
       if question.author
         | 
-        | by #[a(href=`/users/${question.author.id}`)= question.author.name] 
+        | by #[a(href=`/questions/myWrite/${question.author.id}`)= question.author.name] 
