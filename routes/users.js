@@ -112,6 +112,17 @@ router.delete('/:id', needAuth, (req, res, next) => {
       return next(err);
     }
     req.flash('success', 'Deleted Successfully.');
+    res.redirect('/user');
+  });
+});
+
+
+router.delete('/delete/:id', needAuth, (req, res, next) => {
+  User.findOneAndRemove({_id: req.params.id}, function(err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash('success', 'Deleted Successfully.');
     res.redirect('/signout');
   });
 });
