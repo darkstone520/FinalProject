@@ -28,7 +28,7 @@ block content
         if currentUser && question.author.id != currentUser.id && question.numAnswers < question.limitNum && currentUser.isAdmin != 1
           form(action=`/questions/${question.id}/answers`, method='POST')
             .form-group
-                label(for="exampleSelect1") Join Here
+                label(for="exampleSelect1") Join Here (동행자가 있을 경우 중복 참여 가능)
                 select.form-control(name="content")
                   option 참여합니다.
                 button.btn.btn-primary.register-btn(type="submit") Register

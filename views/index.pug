@@ -19,7 +19,7 @@ block content
     .questions
       each question in questions.docs
         .question
-          a.title(href=`/questions/${question.id}`)= question.title
+          a.title#main-card-title(href=`/questions/${question.id}`)= question.title
           include ./questions/_card
     if questions.total > 10
       a.btn.more-btn(href='/questions') 이벤트 더보기
