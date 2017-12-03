@@ -9,7 +9,7 @@
         ul.navbar-nav.ml-auto
           li.nav-item
             a.nav-link(href="/questions") Browse Event
-          if currentUser
+          if currentUser && currentUser.isAdmin == 1
             li.nav-item
               a.nav-link(href="/users") Admin
           if (!currentUser)

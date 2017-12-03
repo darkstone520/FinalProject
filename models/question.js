@@ -20,7 +20,8 @@ var schema = new Schema({
   numAnswers: {type: Number, default: 0},
   numReads: {type: Number, default: 0},
   createdAt: {type: Date, default: Date.now},
-  limitNum: {type: Number, default: 100}
+  limitNum: {type: Number, required: true},
+  isAdmin: {type: Boolean, default: 0}
 }, {
   toJSON: { virtuals: true},
   toObject: {virtuals: true}
