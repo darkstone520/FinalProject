@@ -17,6 +17,25 @@ function needAuth(req, res, next) {
     }
 }
 
+function validateForm(form, options) {
+  var title = form.title || "";
+  var content = form.content || "";
+  title = title.trim();
+  content = content.trim();
+
+  if (!name) {
+    return 'Name is required.';
+  }
+
+  if (!email) {
+    return 'Email is required.';
+  }
+ 
+  return null;
+}
+
+
+
 router.get('/myWrite/:id', needAuth, catchErrors(async (req, res, next) => {
   console.log('Hello')
   const page = parseInt(req.query.page) || 1;
@@ -57,7 +76,7 @@ router.get('/', catchErrors(async (req, res, next) => {
   res.render('questions/index', {questions: questions, term: term});
 }));
 
-router.get('/new', needAuth, (req, res, next) => {
+router.get('/new', needAuth, (req, res, next) => {  
   res.render('questions/new', {question: {}});
 });
 
