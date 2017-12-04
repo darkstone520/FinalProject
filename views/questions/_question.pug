@@ -16,4 +16,5 @@
       | asked on #{moment(question.createdAt).format('YYYY-MM-DD')}
       if question.author
         | 
-        | by #[a(href=`/questions/myWrite/${question.author.id}`)= question.author.name] 
+        | by 
+        =question.author.name
