@@ -18,4 +18,4 @@ block content
             a.title(href=`/questions/${question.id}`)= question.title
             include _myquestion
 
-      +paginate(questions, `/questions/myWirte/${user.id}`, query)
+      +paginate(questions, `/questions/myWirte/${user._id}`, {query: "???XXX&&"})
