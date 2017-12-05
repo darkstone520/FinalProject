@@ -100,7 +100,7 @@ router.put('/:id', needAuth, (req, res, next) => {
         return next(err);
       }
       req.flash('success', 'Updated successfully.');
-      res.redirect('/users');
+      res.redirect('back');
     });
   });
 });
